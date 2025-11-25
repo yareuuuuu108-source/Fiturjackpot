@@ -7,6 +7,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
 
 <style>
+  /* Shake input */
+.error {
+    animation: shake 0.35s ease-in-out, redFlash 0.6s ease-in-out;
+    border: 2px solid #ff2f4d !important;
+    box-shadow: 0 0 15px #ff2f4d;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+}
+
+@keyframes redFlash {
+    0% { box-shadow: 0 0 20px #ff2f4d; }
+    50% { box-shadow: 0 0 0px rgba(255,0,0,0); }
+    100% { box-shadow: 0 0 20px #ff2f4d; }
+}
+
+/* Shake button */
+.btn-error {
+    animation: btnShake 0.4s ease-in-out;
+    background: #ff2f4d !important;
+    box-shadow: 0 0 15px #ff2f4d !important;
+}
+
+@keyframes btnShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+}
+
+/* Micro screen shake (optional) */
+body.screenshake {
+    animation: screenShake 0.25s linear;
+}
+
+@keyframes screenShake {
+    0%, 100% { transform: translate(0,0); }
+    25% { transform: translate(-3px,1px); }
+    50% { transform: translate(3px,-1px); }
+    75% { transform: translate(-3px,2px); }
+}
+
   :root{
     --purple:#9b59ff;
     --neon: #b48cff;
